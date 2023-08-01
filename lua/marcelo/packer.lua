@@ -8,13 +8,19 @@ return require('packer').startup(function(use)
     requires = { {'nvim-lua/plenary.nvim'} }
   }
   use {
-    "folke/which-key.nvim",
+    'folke/which-key.nvim',
     config = function()
       vim.o.timeout = true
       vim.o.timeoutlen = 300
-      require("which-key").setup {
+      require('which-key').setup {
       
       }
     end
   }
+  use('folke/tokyonight.nvim')
+  use { 
+    'nvim-tree/nvim-tree.lua', 
+    requires={ { 'nvim-tree/nvim-web-devicons' } } 
+  }
+  use('dinhhuy258/git.nvim')
 end)
