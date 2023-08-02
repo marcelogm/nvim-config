@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/marcelo/.local/share/nvim/site/pack/packer/start/git.nvim",
     url = "https://github.com/dinhhuy258/git.nvim"
   },
+  ["nvim-jdtls"] = {
+    loaded = true,
+    path = "/home/marcelo/.local/share/nvim/site/pack/packer/start/nvim-jdtls",
+    url = "https://github.com/mfussenegger/nvim-jdtls"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/home/marcelo/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",

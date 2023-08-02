@@ -23,4 +23,5 @@ return require('packer').startup(function(use)
     requires={ { 'nvim-tree/nvim-web-devicons' } } 
   }
   use('dinhhuy258/git.nvim')
+  use('mfussenegger/nvim-jdtls')
 end)
