@@ -22,6 +22,18 @@ return require('packer').startup(function(use)
     'nvim-tree/nvim-tree.lua', 
     requires={ { 'nvim-tree/nvim-web-devicons' } } 
   }
+  use('williamboman/mason.nvim')
   use('dinhhuy258/git.nvim')
   use('mfussenegger/nvim-jdtls')
+  use {
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v2.x',
+    requires = {
+      {'neovim/nvim-lspconfig'},
+      {'williamboman/mason.nvim'},
+      {'hrsh7th/nvim-cmp'},
+      {'hrsh7th/cmp-nvim-lsp'},
+      {'L3MON4D3/LuaSnip'},
+    }
+  }
 end)
