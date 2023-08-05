@@ -7,6 +7,7 @@ return require('packer').startup(function(use)
 	use('sindrets/diffview.nvim')
 	use('dinhhuy258/git.nvim')
 	use('mfussenegger/nvim-jdtls')
+  use('mfussenegger/nvim-dap')	
 	use {
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v2.x',
@@ -14,7 +15,6 @@ return require('packer').startup(function(use)
 			{ 'neovim/nvim-lspconfig' },
 			{ 'williamboman/mason.nvim' },
 			{ 'williamboman/mason-lspconfig.nvim' },
-			{ 'neovim/nvim-lspconfig' },
 			{ 'hrsh7th/nvim-cmp' },
 			{ 'hrsh7th/cmp-nvim-lsp' },
 			{ 'L3MON4D3/LuaSnip' },
