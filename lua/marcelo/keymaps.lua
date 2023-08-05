@@ -1,9 +1,13 @@
 vim.g.mapleader = ' '
 
 -- Navigation
-vim.api.nvim_set_keymap('n', '<leader>n', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<leader>m', ':NvimTreeFocus<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<leader>gc', ':Git commit --amend --noedit', {})
-vim.api.nvim_set_keymap('n', '<leader>s', ':w!<CR>', {})
+vim.api.nvim_set_keymap('n', '<leader>n', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>m', ':NvimTreeFocus<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>b', ':bp<CR>', {})
+vim.api.nvim_set_keymap('n', '<leader>dv', ':DiffviewOpen<CR>', { noremap = true, silent = true, desc = 'Open Diffview' })
 
+-- Editor 
+vim.api.nvim_set_keymap('n', '<leader>r', ':IncRename ', {})
+vim.api.nvim_set_keymap('n', '<A-k>', ':m .-2<CR>', {})
+vim.api.nvim_set_keymap('n', '<A-j>', ':m .+1<CR>', {})
+vim.api.nvim_set_keymap('n', '<C-s>', ':w!<CR>', {})
