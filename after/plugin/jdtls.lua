@@ -70,7 +70,11 @@ local function get_jdtls_paths()
     {
       name = 'JavaSE-17',
       path = vim.fn.expand('~/.sdkman/candidates/java/17.0.8-tem'),
-    }
+    },
+		{
+			name = 'JavaSE-15',
+			path = vim.fn.expand('~/.sdkman/candidates/java/15.0.2-adopt'),
+		},
   }
 
   cache_vars.paths = path

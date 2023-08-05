@@ -7,6 +7,7 @@ return require('packer').startup(function(use)
 	use('sindrets/diffview.nvim')
 	use('dinhhuy258/git.nvim')
 	use('mfussenegger/nvim-jdtls')
+  use('mfussenegger/nvim-dap')	
 	use {
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v2.x',
