@@ -20,9 +20,10 @@ vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { noremap
 -- Git
 vim.keymap.set('n', '<leader>cb', ':Git checkout -b marcelo/', {})
 vim.keymap.set('n', '<leader>cc', ':Git commit -m ', {})
-vim.keymap.set('n', '<leader>ca', ':Git commit amend --noEmit', {})
+vim.keymap.set('n', '<leader>ca', ':Git commit --amend --no-edit', {})
 vim.keymap.set('n', '<leader>cp', ':Git push', {})
+vim.keymap.set('n', '<leader>cf', ':Git push --force', {})
 vim.keymap.set('n', '<leader>cu', function()
-	local branch = vim.fn.system "git branch --show-current | tr -d '\n'"
-	vim.cmd(':Git push --set-upstream origin ' .. branch)
+  local branch = vim.fn.system "git branch --show-current | tr -d '\n'"
+  vim.cmd(':Git push --set-upstream origin ' .. branch)
 end)
