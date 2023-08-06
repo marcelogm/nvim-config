@@ -2,8 +2,8 @@ local set = vim.opt
 
 set.relativenumber = true
 
-local get_tab_callback = function (tab)
-	return function ()
+local get_tab_callback = function(tab)
+	return function()
 		set.tabstop = tab
 		set.softtabstop = tab
 		set.shiftwidth = tab
