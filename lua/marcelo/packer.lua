@@ -15,9 +15,7 @@ return require('packer').startup(function(use)
       { 'neovim/nvim-lspconfig' },
       { 'williamboman/mason.nvim' },
       { 'williamboman/mason-lspconfig.nvim' },
-      { 'hrsh7th/nvim-cmp' },
       { 'hrsh7th/cmp-nvim-lsp' },
-      { 'L3MON4D3/LuaSnip' },
     }
   }
   use {
@@ -40,6 +38,34 @@ return require('packer').startup(function(use)
       vim.o.timeout = true
       vim.o.timeoutlen = 300
       require('which-key').setup {}
+    end
+  }
+  use('L3MON4D3/LuaSnip', {
+    dependencies = 'rafamadriz/friendly-snippets'
+  })
+  use {
+    'hrsh7th/nvim-cmp',
+    config = function()
+      require('cmp').setup {
+        snippet = {
+          expand = function()
+            require('luasnip').lsp_expand(args.body)
+          end
+        },
+        source = {
+          { name = 'luasnip' }
+        }
+      }
+    end
+  }
+  use('saadparwaiz1/cmp_luasnip')
+  use {
+    'glepnir/template.nvim',
+    cmd = { 'Template', 'TemProject' },
+    config = function()
+      require('template').setup {
+        temp_dir = '~/.config/nvim/templates'
+      }
     end
   }
 end)
