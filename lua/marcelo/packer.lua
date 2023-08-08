@@ -30,7 +30,10 @@ return require('packer').startup(function(use)
   }
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.2',
-    requires = { { 'nvim-lua/plenary.nvim' } }
+    requires = {
+      { 'nvim-lua/plenary.nvim' },
+      { 'nvim-telescope/telescope-ui-select.nvim' }
+    }
   }
   use {
     'folke/which-key.nvim',
@@ -68,4 +71,5 @@ return require('packer').startup(function(use)
       }
     end
   }
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 end)

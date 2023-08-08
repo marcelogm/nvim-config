@@ -1,34 +1,39 @@
 vim.g.mapleader = ' '
 
+local map = function (key, command, options)
+  vim.keymap.set('n', key, command, options)
+end
+
 --Navigation
-vim.keymap.set('n', '<leader>n', ':NvimTreeToggle<CR>')
-vim.keymap.set('n', '<leader>m', ':NvimTreeFocus<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>b', ':bp<CR>', {})
-vim.keymap.set('n', '<leader>dv', ':DiffviewOpen<CR>', { noremap = true, silent = true, desc = 'Open Diffview' })
--- vim.keymap.set('n', '<Right>', '<Nop>')
--- vim.keymap.set('n', '<Left>', '<Nop>')
--- vim.keymap.set('n', '<Up>', '<Nop>')
--- vim.keymap.set('n', '<Down>', '<Nop>')
+map('<leader>n', ':NvimTreeToggle<CR>')
+map('<leader>m', ':NvimTreeFocus<CR>', { noremap = true, silent = true })
+map('<leader>b', ':bp<CR>', {})
 
 -- Editor
-vim.keymap.set('n', '<leader>r', ':IncRename ', {})
-vim.keymap.set('n', '<A-k>', ':m .-2<CR>', {})
-vim.keymap.set('n', '<A-j>', ':m .+1<CR>', {})
-vim.keymap.set('n', '<C-s>', ':w!<CR>', {})
-vim.keymap.set('n', '<C-r>', ':%s//', {})
+map('<leader>r', ':IncRename ', {})
+map('<A-k>', ':m .-2<CR>', {})
+map('<A-j>', ':m .+1<CR>', {})
+map('<C-s>', ':w!<CR>', {})
+map('<C-r>', ':%s//', {})
 
 -- LSP
-vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { noremap = true, silent = true })
+map("gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { noremap = true, silent = true })
+map("gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
+map("gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { noremap = true, silent = true })
 
 -- Git
-vim.keymap.set('n', '<leader>cb', ':Git checkout -b marcelo/', {})
-vim.keymap.set('n', '<leader>cc', ':Git commit -m ', {})
-vim.keymap.set('n', '<leader>ca', ':Git commit --amend --no-edit', {})
-vim.keymap.set('n', '<leader>cp', ':Git push', {})
-vim.keymap.set('n', '<leader>cf', ':Git push --force', {})
+map('<leader>gb', ':Git checkout -b marcelo/', { desc = 'Create branch and checkout' })
+map('<leader>gd', ':DiffviewOpen<CR>', { silent = true, desc = 'Open diff' })
+map('<leader>gD', ':DiffviewClose<CR>', { silent = true, desc = 'Close diff' })
+map('<leader>gc', ':Git commit -m ', { desc = 'Commit' })
+map('<leader>gA', ':Git commit --amend --no-edit', { desc = 'Amend' })
+map('<leader>gp', ':Git push', { desc = 'Push' })
+map('<leader>gf', ':Git push --force', { desc = 'Push force' })
+map('<leader>gm', ':GitCreatePullRequest<CR>', { desc = 'Create MR' })
+map('<leader>gr', ':GitRevert<CR>', { desc = 'Revert' })
+map('<leader>gl', ':GitBlame', { desc = 'Blame' })
+map('<leader>ga', ':Git add .', { desc = 'Stage all' })
 
-vim.keymap.set('n', '<Leader>t', function()
+map('<Leader>t', function()
   vim.fn.feedkeys(':Template ')
 end, { remap = true })
