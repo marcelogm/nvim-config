@@ -8,6 +8,7 @@ return require('packer').startup(function(use)
   use('dinhhuy258/git.nvim')
   use('mfussenegger/nvim-jdtls')
   use('mfussenegger/nvim-dap')
+  use('rcarriga/nvim-dap-ui')
   use {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v2.x',
@@ -46,21 +47,10 @@ return require('packer').startup(function(use)
   use('L3MON4D3/LuaSnip', {
     dependencies = 'rafamadriz/friendly-snippets'
   })
-  use {
-    'hrsh7th/nvim-cmp',
-    config = function()
-      require('cmp').setup {
-        snippet = {
-          expand = function()
-            require('luasnip').lsp_expand(args.body)
-          end
-        },
-        source = {
-          { name = 'luasnip' }
-        }
-      }
-    end
-  }
+  use('hrsh7th/cmp-path')
+  use('hrsh7th/cmp-buffer')
+  use('hrsh7th/cmp-cmdline')
+  use('hrsh7th/nvim-cmp')
   use('saadparwaiz1/cmp_luasnip')
   use {
     'glepnir/template.nvim',

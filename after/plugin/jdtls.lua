@@ -124,7 +124,7 @@ end
 
 local function jdtls_setup(event)
   local jdtls = require('jdtls')
-
+  local home = os.getenv('HOME')
   local path = get_jdtls_paths()
   local data_dir = path.data_dir .. '/' .. vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
 
@@ -140,7 +140,7 @@ local function jdtls_setup(event)
   end
 
   local cmd = {
-    'java',
+    home .. '/.sdkman/candidates/java/17.0.8-tem/bin/java',
     '-Declipse.application=org.eclipse.jdt.ls.core.id1',
     '-Dosgi.bundles.defaultStartLevel=4',
     '-Declipse.product=org.eclipse.jdt.ls.core.product',

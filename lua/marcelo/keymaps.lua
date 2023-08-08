@@ -15,11 +15,16 @@ map('<A-k>', ':m .-2<CR>', {})
 map('<A-j>', ':m .+1<CR>', {})
 map('<C-s>', ':w!<CR>', {})
 map('<C-r>', ':%s//', {})
+map('<C-p>', ':put "<CR>', {})
 
 -- LSP
 map("gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { noremap = true, silent = true })
 map("gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
 map("gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { noremap = true, silent = true })
+
+-- Test
+map('<leader>tr', "<cmd>lua require('dap').repl.open()<CR>", { noremap = true, silent = true })
+map('<leader>tf', "<cmd>lua require('jdtls').test_class()<cr>", {})
 
 -- Git
 map('<leader>gb', ':Git checkout -b marcelo/', { desc = 'Create branch and checkout' })
@@ -34,6 +39,6 @@ map('<leader>gr', ':GitRevert<CR>', { desc = 'Revert' })
 map('<leader>gl', ':GitBlame', { desc = 'Blame' })
 map('<leader>ga', ':Git add .', { desc = 'Stage all' })
 
-map('<Leader>t', function()
+map('<Leader>T', function()
   vim.fn.feedkeys(':Template ')
 end, { remap = true })
