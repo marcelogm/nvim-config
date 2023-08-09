@@ -8,7 +8,8 @@ return require('packer').startup(function(use)
   use('dinhhuy258/git.nvim')
   use('mfussenegger/nvim-jdtls')
   use('mfussenegger/nvim-dap')
-  use('rcarriga/nvim-dap-ui')
+  use('nvim-telescope/telescope-dap.nvim')
+  use('vim-test/vim-test')
   use {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v2.x',

@@ -4,17 +4,21 @@ local map = function (key, command, options)
   vim.keymap.set('n', key, command, options)
 end
 
---Navigation
+-- Navigation
 map('<leader>n', ':NvimTreeToggle<CR>')
 map('<leader>m', ':NvimTreeFocus<CR>', { noremap = true, silent = true })
 map('<leader>b', ':bp<CR>', {})
+map('<leader>B', ':bp<CR>', {})
 
 -- Editor
-map('<leader>r', ':IncRename ', {})
+map('<leader>er', ':IncRename ', { desc = 'Rename symbol' })
+map('<leader>ec', ':w | %bd | e#<CR>', { desc = 'Close all buffers but this one', silent = true })
+map('<leader>es', ':wa!<CR>', { desc = 'Save all', silent = true })
+map('<leader>eR', ':%s//', { desc = 'Find and replace' })
+
+-- Misc
 map('<A-k>', ':m .-2<CR>', {})
 map('<A-j>', ':m .+1<CR>', {})
-map('<C-s>', ':w!<CR>', {})
-map('<C-r>', ':%s//', {})
 map('<C-p>', ':put "<CR>', {})
 
 -- LSP
@@ -23,8 +27,11 @@ map("gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = tr
 map("gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { noremap = true, silent = true })
 
 -- Test
-map('<leader>tr', "<cmd>lua require('dap').repl.open()<CR>", { noremap = true, silent = true })
-map('<leader>tf', "<cmd>lua require('jdtls').test_class()<cr>", {})
+map('<leader>tf', ':TestFile -strategy=neovim', { desc = 'Test File' })
+map('<leader>tc', ':TestClass -strategy=neovim', { desc = 'Test Class' })
+map('<leader>tn', ':TestNearest -strategy=neovim', { desc = 'Test Nearest' })
+map('<leader>ta', ':TestSuite -strategy=neovim', { desc = 'Test All' })
+map('<leader>tw', ':TestSuite --continuous -strategy=neovim', { desc = 'Test Suite with Watcher' })
 
 -- Git
 map('<leader>gb', ':Git checkout -b marcelo/', { desc = 'Create branch and checkout' })
