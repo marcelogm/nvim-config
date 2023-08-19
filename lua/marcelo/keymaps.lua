@@ -25,6 +25,7 @@ map('<C-p>', ':put "<CR>', {})
 map("gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { noremap = true, silent = true })
 map("gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
 map("gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { noremap = true, silent = true })
+map("ge", "<cmd>lua vim.diagnostic.open_float()<CR>", { noremap = true, silent = true })
 
 -- Test
 map('<leader>tf', ':TestFile -strategy=neovim', { desc = 'Test File' })
@@ -32,6 +33,11 @@ map('<leader>tc', ':TestClass -strategy=neovim', { desc = 'Test Class' })
 map('<leader>tn', ':TestNearest -strategy=neovim', { desc = 'Test Nearest' })
 map('<leader>ta', ':TestSuite -strategy=neovim', { desc = 'Test All' })
 map('<leader>tw', ':TestSuite --continuous -strategy=neovim', { desc = 'Test Suite with Watcher' })
+
+-- Dap
+map('<leader>db', ':lua require("dap").toggle_breakpoint()<CR>', { desc = 'Toggle Breakpoints' })
+map('<leader>dc', ':lua require("dap").continue()<CR>', { desc = 'Attach or continue' })
+map('<leader>du', ':lua require("dapui").toggle()<CR>', { desc = 'Open dap-ui' })
 
 -- Git
 map('<leader>gb', ':Git checkout -b marcelo/', { desc = 'Create branch and checkout' })

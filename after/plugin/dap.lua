@@ -1,6 +1,8 @@
 local util = require('jdtls.util')
 local dap = require('dap')
 
+require("dapui").setup()
+
 -- TODO: melhorar
 dap.adapters.java = function(callback)
   util.execute_command({ command = 'vscode.java.startDebugSession' }, function(err0, port)

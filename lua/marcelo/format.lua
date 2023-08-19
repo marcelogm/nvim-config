@@ -19,7 +19,7 @@ vim.api.nvim_create_autocmd('FileType', {
 
 -- Lua
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'lua' },
-  desc = 'Setup tabstop for Lua',
+  pattern = { 'lua', 'javascript', 'typescript', 'javascriptreact' },
+  desc = 'Setup tabstop for Lua, JS e TS',
   callback = get_tab_callback(2)
 })

@@ -1,13 +1,14 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
+  use('nvimdev/guard.nvim')
   use('wbthomason/packer.nvim')
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
   use('folke/tokyonight.nvim')
   use('sindrets/diffview.nvim')
   use('dinhhuy258/git.nvim')
   use('mfussenegger/nvim-jdtls')
-  use('mfussenegger/nvim-dap')
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
   use('nvim-telescope/telescope-dap.nvim')
   use('vim-test/vim-test')
   use {
