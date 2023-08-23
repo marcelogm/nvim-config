@@ -10,6 +10,10 @@ local get_tab_callback = function(tab)
   end
 end
 
+-- Default
+local default_tag = get_tab_callback(4)
+default_tag()
+
 -- Java
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'java' },
@@ -19,7 +23,7 @@ vim.api.nvim_create_autocmd('FileType', {
 
 -- Lua
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'lua', 'javascript', 'typescript', 'javascriptreact' },
+  pattern = { 'lua', 'c', 'javascript', 'typescript', 'javascriptreact' },
   desc = 'Setup tabstop for Lua, JS e TS',
   callback = get_tab_callback(2)
 })

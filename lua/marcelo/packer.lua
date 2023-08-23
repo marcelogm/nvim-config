@@ -3,6 +3,7 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
   use('nvimdev/guard.nvim')
   use('wbthomason/packer.nvim')
+  use('tree-sitter/tree-sitter-c')
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
   use('folke/tokyonight.nvim')
   use('sindrets/diffview.nvim')
