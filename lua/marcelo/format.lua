@@ -27,3 +27,10 @@ vim.api.nvim_create_autocmd('FileType', {
   desc = 'Setup tabstop for Lua, JS e TS',
   callback = get_tab_callback(2)
 })
+
+vim.api.nvim_create_autocmd('BufWritePre', {
+  pattern = '',
+  callback = function ()
+    vim.lsp.buf.format()
+  end
+})
