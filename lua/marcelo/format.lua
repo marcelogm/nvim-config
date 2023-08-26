@@ -1,5 +1,6 @@
 local set = vim.opt
 
+set.number = true
 set.relativenumber = true
 
 local get_tab_callback = function(tab)
@@ -24,13 +25,14 @@ vim.api.nvim_create_autocmd('FileType', {
 -- Lua
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'lua', 'c', 'javascript', 'typescript', 'javascriptreact' },
-  desc = 'Setup tabstop for Lua, JS e TS',
+  desc = 'Setup tabstop for Lua, C, JS e TS',
   callback = get_tab_callback(2)
 })
 
+-- Format on save
 vim.api.nvim_create_autocmd('BufWritePre', {
   pattern = '',
-  callback = function ()
+  callback = function()
     vim.lsp.buf.format()
   end
 })
