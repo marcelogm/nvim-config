@@ -1,6 +1,6 @@
 vim.g.mapleader = ' '
 
-local map = function (key, command, options)
+local map = function(key, command, options)
   vim.keymap.set('n', key, command, options)
 end
 
@@ -16,7 +16,20 @@ map('<leader>ec', ':w | %bd | e#<CR>', { desc = 'Close all buffers but this one'
 map('<leader>es', ':wa!<CR>', { desc = 'Save all', silent = true })
 map('<leader>eR', ':%s//', { desc = 'Find and replace' })
 
+-- Window
+map('-', ':vertical resize -5<CR>', { desc = 'Vertical Resize -5' })
+map('=', ':vertical resize +5<CR>', { desc = 'Vertical Resize +5' })
+map('_', ':horizontal resize -5<CR>', { desc = 'Horizontal Resize -5' })
+map('+', ':horizontal resize +5<CR>', { desc = 'Horizontal Resize +5' })
+map('<Left>', '<C-w>h', { desc = 'Window Left' })
+map('<Down>', '<C-w>j', { desc = 'Window Bottom' })
+map('<Up>', '<C-w>k', { desc = 'Window Up' })
+map('<Right>', '<C-w>l', { desc = 'Window right' })
+
 -- Misc
+vim.keymap.set('i', 'fj', '<esc>', {})
+vim.keymap.set('i', 'jf', '<esc>', {})
+
 map('<A-k>', ':m .-2<CR>', {})
 map('<A-j>', ':m .+1<CR>', {})
 map('<C-p>', ':put "<CR>', {})
