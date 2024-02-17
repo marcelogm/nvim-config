@@ -39,7 +39,6 @@ return require('packer').startup(function(use)
 
   -- Git (I should remove this, almost never use)
   use('sindrets/diffview.nvim')
-  use('dinhhuy258/git.nvim')
 
   -- Lsp and snippets
   use('mfussenegger/nvim-jdtls')
@@ -68,8 +67,8 @@ return require('packer').startup(function(use)
   use('saadparwaiz1/cmp_luasnip')
   use('github/copilot.vim')
 
-  -- Formatter and linter integration (RIP null-ls)
-  use('jose-elias-alvarez/null-ls.nvim')
+  -- null-ls reloaded!
+  use('nvimtools/none-ls.nvim')
 
   -- Template snippets
   use {
@@ -81,7 +80,4 @@ return require('packer').startup(function(use)
       }
     end
   }
-
-  -- DAP (I should it too)
-  use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
 end)
