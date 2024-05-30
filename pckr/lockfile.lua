@@ -19,7 +19,7 @@ return {
   ["https://github.com/nvim-telescope/telescope.nvim"] = { commit = "776b509f80dd49d8205b9b0d94485568236d1192" },
   ["https://github.com/nvim-tree/nvim-tree.lua"] = { commit = "5a87ffe35c4739ffb6b62052572583ad277a20ae" },
   ["https://github.com/nvim-tree/nvim-web-devicons"] = { commit = "b77921fdc44833c994fdb389d658ccbce5490c16" },
-  ["https://github.com/nvim-treesitter/nvim-treesitter"] = { commit = "b91ae14fc3bb801c7ea69bc283fe860b32b5163d" },
+  ["https://github.com/nvim-treesitter/nvim-treesitter"] = { commit = "5c924407cf110e9da4f3ba02ffed127b4198ad89" },
   ["https://github.com/nvimtools/none-ls-extras.nvim"] = { commit = "336e84b9e43c0effb735b08798ffac382920053b" },
   ["https://github.com/nvimtools/none-ls.nvim"] = { commit = "f5b960a73418249aebcdae3455de320360509253" },
   ["https://github.com/saadparwaiz1/cmp_luasnip"] = { commit = "05a9ab28b53f71d1aece421ef32fee2cb857a843" },

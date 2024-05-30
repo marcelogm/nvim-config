@@ -46,3 +46,13 @@ map('<leader>gD', ':DiffviewClose<CR>', { silent = true, desc = 'Close diff' })
 map('<Leader>T', function()
   vim.fn.feedkeys(':Template ')
 end, { remap = true })
+
+local builtin = require('telescope.builtin')
+
+map('<leader>fr', builtin.lsp_references, { desc = 'References' })
+map('<leader>ff', builtin.find_files, { desc = 'Find Files' })
+map('<leader>fg', builtin.git_files, { desc = 'Find Git Files' })
+map('<leader>fa', builtin.live_grep, { desc = 'Live Grep' })
+map('<leader>fb', builtin.buffers, { desc = 'Find Buffers' })
+map('<leader>fh', builtin.help_tags, { desc = 'Find Help' })
+map('<leader>fd', builtin.diagnostics, { desc = 'Diagnostics' })
