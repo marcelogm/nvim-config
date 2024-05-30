@@ -40,15 +40,14 @@ local function on_attach(client, _)
     vim.cmd("command! -buffer FormattingSync lua vim.lsp.buf.formatting_sync()")
   end
 end
-
 null_ls.setup({
   sources = {
-    null_ls.builtins.diagnostics.eslint_d.with(opts.eslint_diagnostics),
-    null_ls.builtins.formatting.eslint_d.with(opts.eslint_formatting),
+    require('none-ls.diagnostics.eslint_d'),
+    require('none-ls.formatting.eslint_d'),
     null_ls.builtins.formatting.prettier.with(opts.prettier_formatting),
     null_ls.builtins.formatting.stylua.with(opts.stylua_formatting),
     null_ls.builtins.formatting.elm_format.with(opts.elm_format_formatting),
-    null_ls.builtins.code_actions.eslint_d.with(opts.eslint_diagnostics),
+    require('none-ls.code_actions.eslint_d') 
   },
   on_attach = on_attach,
 })
