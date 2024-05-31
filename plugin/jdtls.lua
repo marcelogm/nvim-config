@@ -67,14 +67,30 @@ local function get_jdtls_paths()
   end
 
   path.runtimes = {
-    {
-      name = 'JavaSE-17',
-      path = vim.fn.expand('~/.sdkman/candidates/java/17.0.8-tem'),
+    { 
+      path = vim.fn.expand("~/.sdkman/candidates/java/8.0.412-tem"),
+      name = "JavaSE-1.8",
     },
     {
-      name = 'JavaSE-15',
-      path = vim.fn.expand('~/.sdkman/candidates/java/15.0.2-adopt'),
+      path = vim.fn.expand("~/.sdkman/candidates/java/11.0.23-tem"),
+      name = "JavaSE-11",
     },
+    {
+      path = vim.fn.expand("~/.sdkman/candidates/java/14.0.2-ojdk"),
+      name = "JavaSE-14",
+    },
+    {
+      path = vim.fn.expand("~/.sdkman/candidates/java/15.0.2-ojdk"),
+      name = "JavaSE-15",
+    },
+    {
+      path = vim.fn.expand("~/.sdkman/candidates/java/16.0.1-ojdk"),
+      name = "JavaSE-16",
+    },
+    {
+      path = vim.fn.expand("~/.sdkman/candidates/java/17.0.11-tem"),
+      name = "JavaSE-17",
+    },                                                                                                         
   }
 
   cache_vars.paths = path
@@ -140,7 +156,7 @@ local function jdtls_setup(event)
   end
 
   local cmd = {
-    home .. '/.sdkman/candidates/java/17.0.8-tem/bin/java',
+    home .. '/.sdkman/candidates/java/17.0.11-tem/bin/java',
     '-Declipse.application=org.eclipse.jdt.ls.core.id1',
     '-Dosgi.bundles.defaultStartLevel=4',
     '-Declipse.product=org.eclipse.jdt.ls.core.product',
