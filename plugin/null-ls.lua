@@ -7,7 +7,7 @@ local root_has_file = function(files)
   end
 end
 
-local eslint_root_files = { ".eslintrc", ".eslintrc.js", ".eslintrc.json" }
+local eslint_root_files = { ".eslintrc", ".eslintrc.js", ".eslintrc.json", "eslint.config.mjs" }
 local prettier_root_files = { ".prettierrc", ".prettierrc.js", ".prettierrc.json" }
 local stylua_root_files = { "stylua.toml", ".stylua.toml" }
 local elm_root_files = { "elm.json" }

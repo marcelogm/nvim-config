@@ -1,4 +1,5 @@
 local cmp = require 'cmp'
+local lspkind = require('lspkind')
 
 cmp.setup({
   snippet = {
@@ -22,7 +23,13 @@ cmp.setup({
     { name = 'luasnip' },
   }, {
     { name = 'buffer' },
-  })
+  }),
+  formatting = {
+    format = lspkind.cmp_format({
+      mode = 'symbol_text',
+      preset = 'codicons',
+    })
+  }
 })
 
 cmp.setup.filetype('gitcommit', {
@@ -48,3 +55,4 @@ cmp.setup.cmdline(':', {
     { name = 'cmdline' }
   })
 })
+

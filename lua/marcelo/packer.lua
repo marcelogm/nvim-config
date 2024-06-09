@@ -79,6 +79,7 @@ require('pckr').add {
   },
   'saadparwaiz1/cmp_luasnip',
   'github/copilot.vim',
+  'jubnzv/virtual-types.nvim',
 
   -- null-ls reloaded!
   {
@@ -98,4 +99,21 @@ require('pckr').add {
       }
     end
   },
+
+  -- Testing new features
+  'onsails/lspkind.nvim',
+  'ray-x/lsp_signature.nvim',
+  {
+    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    config = function()
+      require("lsp_lines").setup()
+    end,
+  },
+  {
+    'ojroques/nvim-lspfuzzy',
+    requires = {
+      {'junegunn/fzf'},
+      {'junegunn/fzf.vim'},  -- to enable preview (optional)
+    },
+  }
 }
