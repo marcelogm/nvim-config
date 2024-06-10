@@ -25,7 +25,7 @@ require("mason-lspconfig").setup {
 require('lspconfig').tsserver.setup {}
 require('lspconfig').ansiblels.setup {
   filetypes = {
-    "yaml",
+    "ansible.yaml"
   },
   ansible = {
     path = "ansible"
@@ -43,6 +43,11 @@ require('lspconfig').ansiblels.setup {
       path = "ansible-lint"
     }
   }
+}
+require('lspconfig').groovyls.setup {
+  filetypes = {
+    "groovy",
+  },
 }
 
 local lsp = require('lsp-zero').preset({})

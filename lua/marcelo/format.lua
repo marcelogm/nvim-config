@@ -2,6 +2,7 @@ local set = vim.opt
 
 set.number = true
 set.relativenumber = true
+set.clipboard = "unnamedplus"
 
 local get_tab_callback = function(tab)
   return function()
