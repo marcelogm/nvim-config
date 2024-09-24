@@ -1,25 +1,6 @@
 -- Mason
 require("mason").setup()
-require("mason-lspconfig").setup {
-  ensure_installed = {
-    "json-lsp",
-    "nginx-language-server",
-    "kotlin-language-server",
-    "yamlfmt",
-    "vscode-java-decompiler",
-    "typescript-language-server",
-    "prettier",
-    "dockerfile-language-server",
-    "docker-compose-language-service",
-    "ansible-lint",
-    "cmake-language-server",
-    "clang-format",
-    "ansible-language-server",
-    "clangd",
-    "eslint_d",
-    "jdtls",
-  },
-}
+require("mason-lspconfig").setup()
 
 
 local configs = require("lspconfig.configs")
@@ -35,7 +16,7 @@ end
 require('lspconfig').bacon_ls.setup({ autostart = true, filetypes = { "r" } })
 
 -- TS
-require('lspconfig').tsserver.setup {}
+require('lspconfig').ts_ls.setup {}
 require('lspconfig').ansiblels.setup {
   filetypes = {
     "ansible.yaml"
