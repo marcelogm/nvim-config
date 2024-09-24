@@ -54,12 +54,25 @@ require('pckr').add {
   'sindrets/diffview.nvim',
 
   -- Lsp and snippets
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      diagnostics = {
+        update_in_insert = true,
+      },
+      servers = {
+        rust_analyzer = { enable = false },
+        bacon_ls = {
+          enable = true
+        },
+      },
+    },
+  },
   'mfussenegger/nvim-jdtls',
   {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v2.x',
     requires = {
-      { 'neovim/nvim-lspconfig' },
       { 'williamboman/mason.nvim' },
       { 'williamboman/mason-lspconfig.nvim' },
       { 'hrsh7th/cmp-nvim-lsp' },
@@ -97,5 +110,16 @@ require('pckr').add {
         temp_dir = '~/.config/nvim/templates'
       }
     end
+  },
+  {
+    "mrcjkb/rustaceanvim",
+    opts = {
+      default_settings = {
+        ["rust-analyzer"] = {
+          diagnostics = { enable = false },
+          checkOnSave = { enable = false },
+        },
+      },
+    },
   },
 }

@@ -21,6 +21,19 @@ require("mason-lspconfig").setup {
   },
 }
 
+
+local configs = require("lspconfig.configs")
+if not configs.bacon_ls then
+  configs.bacon_ls = {
+    default_config = {
+      cmd = { "bacon-ls" },
+      root_dir = require("lspconfig").util.root_pattern(".git"),
+      filetypes = { "rust" },
+    },
+  }
+end
+require('lspconfig').bacon_ls.setup({ autostart = true, filetypes = { "r" } })
+
 -- TS
 require('lspconfig').tsserver.setup {}
 require('lspconfig').ansiblels.setup {
